@@ -5,21 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beauty | Bridal Services</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .hero-banner { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x600') center/cover no-repeat; color: white; padding: 100px 0; text-align: center; }
-    .service-card img { height: 200px; object-fit: cover; }
-    .navbar-brand span { font-weight: bold; color: #e91e63; }
-    .btn-quote { background-color: #e91e63; color: white; border: none; }
-    .btn-quote:hover { background-color: #d81b60; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- 🔗 Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#"><span>Beauty</span> <small class="text-muted">Shaping your beauty</small></a>
+    <a class="navbar-brand d-flex align-items-center" href="#"><img src="assets/logo.svg" width="40" height="40" alt="Beauty logo" class="me-2"> <div><span>Beauty</span> <small class="text-muted d-block">Shaping your beauty</small></div></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,9 +26,12 @@
         <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
       </ul>
-      <form class="d-flex ms-3">
-        <input class="form-control me-2" type="search" placeholder="Search" />
-        <button class="btn btn-outline-secondary" type="submit">Go</button>
+      <form class="d-flex ms-3 align-items-center search-wrap">
+        <div class="input-group">
+          <input class="form-control search-input" type="search" placeholder="Search" />
+          <button class="btn btn-search" type="submit"><i class="bi bi-search"></i></button>
+        </div>
+        <button class="btn btn-link text-white ms-3"><i class="bi bi-person-circle" style="font-size:1.25rem"></i></button>
       </form>
     </div>
   </div>
@@ -42,61 +40,119 @@
 <!-- 🎀 Hero Banner -->
 <section class="hero-banner">
   <div class="container">
-    <h1 class="display-5 fw-bold">Quality Bridal Makeup & Hair Styling Services</h1>
-    <p class="lead">Certified Professionals To Cater Your Bridal Makeup & Hairstyling Needs</p>
-    <a href="#" class="btn btn-quote btn-lg mt-3">Request Quote</a>
-  </div>
-</section>
-
-<!-- 💅 Services Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Our Services</h2>
-    <div class="row g-4">
-      <!-- Bridal Makeup -->
-      <div class="col-md-3">
-        <div class="card service-card h-100">
-          <img src="https://via.placeholder.com/300x200?text=Bridal+Makeup" class="card-img-top" alt="Bridal Makeup" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Bridal Makeup</h5>
-            <a href="#" class="btn btn-outline-primary">BOOK NOW</a>
-          </div>
-        </div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1 class="display-5 fw-bold">Quality Bridal Makeup &amp; Hair Styling Services</h1>
+        <p class="lead">Certified Professionals To Cater Your Bridal Makeup &amp; Hairstyling Needs</p>
+        <a href="#contact" class="btn btn-quote btn-lg mt-3">Request Quote <span class="ms-2">›</span></a>
       </div>
-      <!-- Party Makeup -->
-      <div class="col-md-3">
-        <div class="card service-card h-100">
-          <img src="https://via.placeholder.com/300x200?text=Party+Makeup" class="card-img-top" alt="Party Makeup" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Party Makeup</h5>
-            <a href="#" class="btn btn-outline-primary">BOOK NOW</a>
-          </div>
-        </div>
-      </div>
-      <!-- Hair Styling -->
-      <div class="col-md-3">
-        <div class="card service-card h-100">
-          <img src="https://via.placeholder.com/300x200?text=Hair+Styling" class="card-img-top" alt="Hair Styling" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Hair Styling</h5>
-            <a href="#" class="btn btn-outline-primary">BOOK NOW</a>
-          </div>
-        </div>
-      </div>
-      <!-- Saree Draping -->
-      <div class="col-md-3">
-        <div class="card service-card h-100">
-          <img src="https://via.placeholder.com/300x200?text=Saree+Draping" class="card-img-top" alt="Saree Draping" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Saree Draping</h5>
-            <a href="#" class="btn btn-outline-primary">BOOK NOW</a>
-          </div>
-        </div>
+      <div class="hero-right">
+        <div class="hero-image" aria-hidden="true"></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 💅 Services Section -->
+<section class="py-5 bg-light services-section">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="service-grid">
+      <div class="service-tile tile-color">
+        <div class="tile-inner">
+          <div class="tile-line"></div>
+          <h4>BRIDAL<br/>MAKEUP</h4>
+          <a href="#" class="btn btn-book">BOOK NOW</a>
+        </div>
+      </div>
+      <div class="service-tile tile-img"><img src="assets/bridel2.jpeg" alt="bridal"></div>
+      <div class="service-tile tile-img"><img src="assets/face2-removebg-preview.png" alt="party"></div>
+      <div class="service-tile tile-color">
+        <div class="tile-inner">
+          <div class="tile-line"></div>
+          <h4>PARTY<br/>MAKEUP</h4>
+          <a href="#" class="btn btn-book">BOOK NOW</a>
+        </div>
+      </div>
+
+      <div class="service-tile tile-img"><img src="assets/hairst.jpg" alt="hair"></div>
+      <div class="service-tile tile-color">
+        <div class="tile-inner">
+          <div class="tile-line"></div>
+          <h4>HAIR<br/>STYLING</h4>
+          <a href="#" class="btn btn-book">BOOK NOW</a>
+        </div>
+      </div>
+      <div class="service-tile tile-color">
+        <div class="tile-inner">
+          <div class="tile-line"></div>
+          <h4>SAREE<br/>DRAPING</h4>
+          <a href="#" class="btn btn-book">BOOK NOW</a>
+        </div>
+      </div>
+      <div class="service-tile tile-img"><img src="assets/saree%20drap.jpg" alt="saree"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><img src="assets/bueaty_lg2-removebg-preview.png" alt="portfolio 1"></div>
+      <div class="portfolio-item"><img src="assets/bridel2.jpeg" alt="portfolio 2"></div>
+      <div class="portfolio-item"><img src="assets/face2-removebg-preview.png" alt="portfolio 3"></div>
+      <div class="portfolio-item"><img src="assets/hairst.jpg" alt="portfolio 4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Request a Quote</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form id="contactForm" class="bg-white p-4 rounded shadow-sm">
+          <div class="mb-3">
+            <label class="form-label">Full name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Service</label>
+            <select name="service" class="form-select">
+              <option>Bridal Makeup</option>
+              <option>Party Makeup</option>
+              <option>Hair Styling</option>
+              <option>Saree Draping</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="4" class="form-control"></textarea>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-quote">Send Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container text-center">
+    <small>&copy; 2025 Beauty. All rights reserved.</small>
+  </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
